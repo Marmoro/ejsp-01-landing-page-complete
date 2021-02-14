@@ -1,0 +1,270 @@
+:root {
+    --theme-primary: #01579b;
+    --theme-accent:#0082f1;
+    --theme-light: #4d97ff;
+    --theme-light-focus: #72a1e4;
+    --theme-dark: #002f6c;
+    --theme-dark-opacue: rgba(0, 47, 108, 0.6);
+    --theme-primary-text: #fff;
+    --theme-padding-xs: 4px;
+    --theme-padding-s: 8px;
+    --theme-padding-m: 16px;
+    --theme-padding-l: 24px;
+    --theme-padding-xl: 32px;
+    --theme-padding-xxl: 88px;
+    --theme-transition: 0.24s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    --theme-font-size-s: 0.85rem;
+}
+
+
+@font-face {
+    font-family: 'Saira';
+    src: url('./assets/font/Saira-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saira';
+    src: url('./assets/font/Saira-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Saira';
+    src: url('./assets/font/Saira-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Saira', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--theme-primary);
+    color: var(--theme-primary-text);
+    padding: var(--theme-padding-m);
+    min-height: 42px;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+nav {
+    background-color: var(--theme-dark);
+
+    padding: var(--theme-padding-s);
+}
+
+nav a {
+    color: var(--theme-primary-text);
+    text-decoration: none;
+    font-size: var(--theme-font-size-s);
+    padding: var(--theme-padding-xs) var(--theme-padding-s);
+    border-radius: var(--theme-padding-xs);
+    transition: var(--theme-transition);
+}
+
+nav a:hover {
+    background-color: var(--theme-light);
+    color: var(--theme-primary-text);
+    transition: var(--theme-transition);
+}
+
+nav a:focus {
+    background-color: var(--theme-light-focus);
+}
+
+main {
+    -webkit-animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    /* display: flex; */
+    min-height: calc(100vh - 144px);
+    /* flex-direction: column; */
+}
+
+.wrapper {
+    max-width: 900px;
+    width:100%;
+    margin: 0 auto;
+}
+
+#hero-header {
+    height: 100%;
+    min-height: calc(100vh - 144px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+#hero-header > article {
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.hero-header-cta-text {
+    font-size: 1.5rem;
+    color:white;
+    font-weight: 300;
+    margin:0;
+    text-shadow: 0px 1px 2px rgb(0 0 0 / 60%);
+}
+
+.cta-button {
+    font-size: 1.5rem;
+    color: var(--theme-primary-text);
+    text-decoration: none;
+    padding: var(--theme-padding-xs) var(--theme-padding-s);
+    border-radius: var(--theme-padding-s);
+    background-color: var(--theme-accent);
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+
+footer {
+    background-color: var(--theme-dark);
+    color: var(--theme-primary-text);
+    padding: var(--theme-padding-m);
+    min-height: 102px;
+    text-align: center;
+}
+
+.img-svg {
+    max-width: 300px;
+}
+
+.box {
+    padding: var(--theme-padding-m);
+}
+
+.floating-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    border-radius: var(--theme-padding-xs);
+    padding: var(--theme-padding-m);
+}
+
+.img-avatar {
+    margin: 0 auto;
+    padding: var(--theme-padding-m);
+    max-width: 150px;
+}
+
+.txt-avatar {
+    text-align: center;
+}
+
+#hero-header .floating-box {
+    margin-top: var(--theme-padding-xxl);
+    margin-bottom: var(--theme-padding-xxl);
+    min-height: 200px;
+}
+
+.flex-margin-fix {
+    margin:calc(var(--theme-padding-m) - var(--theme-padding-xl));
+}
+
+.flex-box {
+    flex:1 1 25ch;
+}
+
+
+.util-center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-justify-content-center {
+    justify-content: center;
+}
+
+.flex-align-items-center {
+    align-items: center;
+}
+
+.flex-justify-items-center {
+    justify-items:center;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.fade-in {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-2-13 15:24:41
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
