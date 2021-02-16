@@ -13,7 +13,9 @@ export class Router {
         this.route = window.location.pathname;
     }
 
-    start() {
-        app.innerHTML += `<main>${new routes[this.route].component().render()}</main>`;
+    async start() {
+        const component = new routes[this.route].component();
+        const render = await component.render();
+        app.innerHTML += `<main>${render}</main>`;
     }
 }

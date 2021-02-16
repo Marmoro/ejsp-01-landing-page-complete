@@ -12,16 +12,11 @@ export class AboutComponent {
 
             <img class="img-svg flex util-center box" src="${GLOBAL_SVG.ACCEPT_REQUEST}" />
             
-            <section class="flex flex-wrap flex-margin-fix">
-                <article class="box flex-box">
+            <section class="flex flex-column">
+                <article class="box white-box">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pretium lectus quam id leo in. Id ornare arcu odio ut sem.
-                </article>
-
-                <article class="box flex-box">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pretium lectus quam id leo in. Id ornare arcu odio ut sem.
-                </article>
-
-                <article class="box flex-box">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pretium lectus quam id leo in. Id ornare arcu odio ut sem.
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel pretium lectus quam id leo in. Id ornare arcu odio ut sem.
                 </article>
             </section>
