@@ -3,15 +3,19 @@ import { Header } from './app/components/layout/header.js';
 import { Navigation } from './app/components/layout/nav.js';
 import { Footer } from './app/components/layout/footer.js';
 
-const app = document.getElementById('app');
-const router = new Router();
-const header = new Header();
-const navigation = new Navigation();
-const footer = new Footer();
 
-app.innerHTML += header.render();
-app.innerHTML += navigation.render();
+(async () => {
+    const app = document.getElementById('app');
+    const router = new Router();
+    const header = new Header();
+    const navigation = new Navigation();
+    const footer = new Footer();
 
-router.start();
+    app.innerHTML += await header.render();
+    app.innerHTML += await navigation.render();
 
-app.innerHTML += footer.render();
+    await router.start();
+
+    app.innerHTML += await footer.render();
+})();
+

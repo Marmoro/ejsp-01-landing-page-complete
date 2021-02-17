@@ -14,3 +14,9 @@ export const GLOBAL_SVG = {
 export const GLOBAL_IMG = {
     HERO_HEADER: IMG_DIR + 'pexels-pixabay-158827.jpg'
 }
+
+export const GLOBAL_ROUTES = {
+    HOME: '/home',
+    SERVICES: '/services',
+    ABOUT: '/about',
+}

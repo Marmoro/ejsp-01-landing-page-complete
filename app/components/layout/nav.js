@@ -9,7 +9,7 @@ export class Navigation {
 
     }
 
-    render() {
+    async render() {
         let linksTemplate = '';
         for (const [key, value] of Object.entries(routes)) {
             if (key === '/') {

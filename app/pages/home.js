@@ -1,40 +1,43 @@
-import { GLOBAL_SVG, SVG_DIR, GLOBAL_IMG } from "../core/globals.js";
+import { GLOBAL_SVG, SVG_DIR, GLOBAL_IMG, GLOBAL_ROUTES } from "../core/globals.js";
 
 export class HomeComponent {
 
-    async getOneComment() {
-        const url = `https://jsonplaceholder.typicode.com/comments/${Math.floor(Math.random() * 10) + 1}`;
+    async getComments() {
+        const url = `https://jsonplaceholder.typicode.com/comments?_limit=3`;
         const request = await fetch(url);
         const response = await request.json();
-        console.log(response);
         return response;
     }
 
     async render() {
-        const comment = await this.getOneComment();
-        this.commentTemplate = `
-        <div>
-            <h4>${comment.name}</h4>
-            <p>${comment.body}</p>
-        </div>
-        `;
+        this.commentTemplate = '';
+        const comments = await this.getComments();
+        comments.forEach(comment => {
+            this.commentTemplate += `
+            <div class="flex-box margin-box">
+                <h4>${comment.name}</h4>
+                <p>${comment.body}</p>
+            </div>
+            `;
+        })
+       
 
         return `
         <section class="box" id="hero-header" style="background-image: linear-gradient(rgba(0, 130, 241,0.4), rgba(0, 130, 241,0.4) 70%), url('${GLOBAL_IMG.HERO_HEADER}')">
 
             <article class="flex flex-wrap flex-justify-content-center" style="margin-top: var(--theme-padding-xxl)">
                 <div class="flex flex-column" style="max-width:50%">
-                    <p class="hero-header-cta-text" style="max-width:400px">We build, deliver and future-proof websites for everyone.</p>
+                    <p class="hero-header-cta-text" style="max-width:600px">We build, deliver and future-proof websites for everyone.</p>
                     <img class="img-svg box" src="${GLOBAL_SVG.BUILDING_WEBSITES}" />
                 </div>
                 <div class="box">
-                    <a href="#" class="cta-button">Get Started</a>
+                    <a href="${GLOBAL_ROUTES.SERVICES}" class="cta-button">Get Started</a>
                 </div>
             </article>
         </section>
-            <section style="margin:var(--theme-padding-m)">
+            <section class="wrapper box">
                 <article class="white-box landing-page-article">
-                    <div class="flex flex-wrap flex-align-items-center">
+                    <div class="flex flex-wrap flex-align-items-start">
                         <div class="flex-box">
                             <img class="img-svg box" src="${GLOBAL_SVG.SUCCESS_FACTORS}" />
                         </div>
@@ -52,7 +55,7 @@ export class HomeComponent {
                 </article>
 
                 <article class="white-box landing-page-article">
-                    <div class="flex flex-wrap flex-align-items-center">
+                    <div class="flex flex-wrap flex-align-items-start">
                         <div class="flex-box">
                             <img class="img-svg box" src="${GLOBAL_SVG.ACCEPT_REQUEST}" />
                         </div>
@@ -63,12 +66,15 @@ export class HomeComponent {
                         </div>
                     </div>
 
-                    <div>${this.commentTemplate}</div>
+                    <div class="flex flex-wrap flex-margin-fix">
+                        ${this.commentTemplate}
+                    </div>
+
                 </article>
 
                 <article class="white-box landing-page-article">
                 <h3>Meet The Team</h3>
-                    <div class="flex flex-wrap flex-align-items-center">
+                    <div class="flex flex-wrap flex-align-items-start">
                         <div class="flex-box flex flex-column">
                             <img class="img-avatar" src="${SVG_DIR}/team_1.svg">
                             <h5 class="txt-avatar">Gilbert Douglas</h5>

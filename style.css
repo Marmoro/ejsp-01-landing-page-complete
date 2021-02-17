@@ -1,12 +1,14 @@
 :root {
     --theme-primary: #01579b;
     --theme-primary-opacue: rgba(1, 88, 155, 0.8);
+    --theme-secondary: #ff8800;
     --theme-accent: #0082f1;
     --theme-light: #4d97ff;
     --theme-light-focus: #72a1e4;
     --theme-dark: #002f6c;
     --theme-dark-opacue: rgba(0, 47, 108, .6);
-    --theme-background: rgba(0, 47, 108, .06);
+    --theme-background: #F0F2F6;
+    --theme-background-secondary: rgba(0, 47, 108, .06);
     --theme-primary-text: #fff;
     --theme-padding-xs: 4px;
     --theme-padding-s: 8px;
@@ -67,7 +69,7 @@ body {
 }
 
 header {
-    background-color: var(--theme-accent);
+    background-color: var(--theme-primary);
     color: var(--theme-primary-text);
     padding: var(--theme-padding-m);
     min-height: 42px;
@@ -78,15 +80,24 @@ header {
     top: 0;
 }
 
+header img {
+    width: 80px;
+}
+
 header h1 {
     margin: 0;
     font-weight: normal;
     font-size: 1.5rem;
 }
 
+h3 {
+    color:var(--theme-secondary);
+    margin-bottom: var(--theme-padding-xl);
+    font-size: 1.4rem;
+}
+
 nav {
-    /* background-color: var(--theme-accent); */
-    padding: var(--theme-padding-s);
+    padding: var(--theme-padding-m);
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -94,7 +105,7 @@ nav {
 }
 
 nav a {
-    background-color: var(--theme-accent);
+    background-color: var(--theme-primary);
     color: var(--theme-primary-text);
     text-decoration: none;
     font-size: var(--theme-font-size-s);
@@ -110,7 +121,7 @@ nav a:first-of-type {
 }
 
 nav a:hover {
-    background-color: var(--theme-light);
+    background-color: var(--theme-secondary);
     color: var(--theme-primary-text);
     transition: var(--theme-transition);
 }
@@ -131,9 +142,24 @@ main {
     /* flex-direction: column; */
 }
 
+.page-title {
+    background-color: var(--theme-background-secondary);
+    color: var(--theme-primary);
+    padding: var(--theme-padding-xl) var(--theme-padding-m);
+    margin-top: var(--theme-padding-l);
+    margin-bottom: var(--theme-padding-xxl);
+    border-top: 1px solid var(--theme-background-secondary);
+    border-bottom: 1px solid var(--theme-background-secondary);
+}
+
+.page-title h2 {
+    font-weight: 300 !important;
+    font-size: 3rem;
+}
+
 .wrapper {
     max-width: 900px;
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
 }
 
@@ -149,9 +175,9 @@ main {
 }
 
 .hero-header-cta-text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
-    font-weight: 300;
+    font-weight: 500;
     margin: 0;
     text-shadow: 0px 1px 2px rgb(0 0 0 / 60%);
 }
@@ -160,14 +186,16 @@ main {
     font-size: 1.5rem;
     color: var(--theme-primary-text);
     text-decoration: none;
-    padding: var(--theme-padding-xs) var(--theme-padding-s);
+    padding: var(--theme-padding-s) var(--theme-padding-m);
     border-radius: var(--theme-padding-s);
-    background-color: var(--theme-accent);
+    background-color: var(--theme-secondary);
     box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 footer {
-    background-color: var(--theme-accent);
+    background-color: var(--theme-dark);
     color: var(--theme-primary-text);
     padding: var(--theme-padding-m);
     min-height: 102px;
@@ -180,6 +208,22 @@ footer {
 
 .box {
     padding: var(--theme-padding-m);
+}
+
+.icon-button {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex:0 0 48px;
+}
+
+.primary-bg {
+    background-color: var(--theme-primary);
 }
 
 .white-box {
@@ -199,6 +243,10 @@ footer {
     text-align: center;
 }
 
+.margin-box {
+    margin: var(--theme-padding-m);
+}
+
 .flex-margin-fix {
     margin: calc(var(--theme-padding-m) - var(--theme-padding-xl));
 }
@@ -207,10 +255,19 @@ footer {
     flex: 1 1 25ch;
 }
 
+.flex-box-s {
+    flex:1 1 20ch;
+}
+
 
 .util-center {
     margin: 0 auto !important;
     text-align: center !important;
+}
+
+.util-spacer-x {
+    margin-left: var(--theme-padding-xs);
+    margin-right: var(--theme-padding-xs);
 }
 
 .flex {
@@ -227,6 +284,10 @@ footer {
 
 .flex-justify-content-center {
     justify-content: center;
+}
+
+.flex-align-items-start {
+    align-items: flex-start;
 }
 
 .flex-align-items-center {

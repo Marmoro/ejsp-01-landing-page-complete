@@ -7,8 +7,10 @@ export class AboutComponent {
 
     render() {
         return `
-        <section class="box">
+        <div class="page-title">
             <h2>About Us</h2>
+        </div>
+        <section class="wrapper box">
 
             <img class="img-svg flex util-center box" src="${GLOBAL_SVG.ACCEPT_REQUEST}" />
             

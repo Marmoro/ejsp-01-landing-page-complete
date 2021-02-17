@@ -5,7 +5,7 @@ export class Footer {
         const date = new Date();
         this.time = date.getFullYear();
     }
-    render() {
+    async render() {
         return `
         <footer>
             <h4>${GLOBAL_VARS.APP_TITLE}</h4>
