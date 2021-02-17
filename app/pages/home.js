@@ -26,7 +26,7 @@ export class HomeComponent {
         <section class="box" id="hero-header" style="background-image: linear-gradient(rgba(0, 130, 241,0.4), rgba(0, 130, 241,0.4) 70%), url('${GLOBAL_IMG.HERO_HEADER}')">
 
             <article class="flex flex-wrap flex-justify-content-center" style="margin-top: var(--theme-padding-xxl)">
-                <div class="flex flex-column" style="max-width:50%">
+                <div class="flex flex-column" class="hero-header-content-container">
                     <p class="hero-header-cta-text" style="max-width:600px">We build, deliver and future-proof websites for everyone.</p>
                     <img class="img-svg box" src="${GLOBAL_SVG.BUILDING_WEBSITES}" />
                 </div>
