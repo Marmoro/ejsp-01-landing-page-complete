@@ -12,10 +12,10 @@ export class Navigation {
     async render() {
         let linksTemplate = '';
         for (const [key, value] of Object.entries(routes)) {
-            if (key === '/') {
+            if (key === '/' || key === '') {
                 continue;
             }
-            linksTemplate += `<a href="${key}">${value.name}</a>`
+            linksTemplate += `<a href="/${key}">${value.name}</a>`
         }
 
         return `

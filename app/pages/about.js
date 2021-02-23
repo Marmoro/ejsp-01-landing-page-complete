@@ -5,7 +5,7 @@ export class AboutComponent {
 
     }
 
-    render() {
+    async render() {
         return `
         <div class="page-title">
             <h2>About Us</h2>

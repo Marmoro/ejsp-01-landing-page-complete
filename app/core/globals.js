@@ -16,7 +16,7 @@ export const GLOBAL_IMG = {
 }
 
 export const GLOBAL_ROUTES = {
-    HOME: '/home',
-    SERVICES: '/services',
-    ABOUT: '/about',
+    HOME: 'home',
+    SERVICES: 'services',
+    ABOUT: 'about',
 }
